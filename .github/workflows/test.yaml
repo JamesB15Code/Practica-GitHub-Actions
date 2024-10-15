@@ -1,0 +1,10 @@
+name : Hola mundo james
+
+on : [push]
+
+jobs:
+  uno:
+    runs-on: ubunto-latest
+    steps:
+      - name: Mensaje
+        run: echo "Hola mundo, james "
