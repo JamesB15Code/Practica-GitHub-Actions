@@ -35,6 +35,8 @@ jobs:
         run: |
           cd .github/workflows
           ls -al
+          chmod +x scrtip.sh
+          ls -al
 
 
 
