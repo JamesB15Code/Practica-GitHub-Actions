@@ -1,23 +1,25 @@
-name : Hola mundo james
+name: Hola Mundo
 
-on : [push]
+on: [push]
 
 jobs:
   uno:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Mensaje
         run: echo "Hola mundo!!!"
-      - name: Touch File  # Crea
+        
+      - name: Touch file  # Crea el archivo hola.txt
         run: |
           touch hola.txt
           ls -al
-      - name: Set text  # Agrega
+          
+      - name: Set text  # Agrega texto al archivo hola.txt
         run: |
           echo "Hola mundo" >> hola.txt
           ls -al
-      - name: Read file  # Lee
+          
+      - name: Read file  # Lee el contenido del archivo hola.txt
         run: |
           cat hola.txt
           ls -al
@@ -27,7 +29,7 @@ jobs:
     needs: [uno]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.1    
+        uses: actions/checkout@v4.2.1
       - name: Directorio
         run: ls -al
 
@@ -38,6 +40,3 @@ jobs:
           chmod +x script.sh
           ls -al
           ./script.sh
-
-
-
